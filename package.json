@@ -12,9 +12,15 @@
 		"url": "https://github.com/SudoDotDog/Sudoo-JWT-Verify/issues"
 	},
 	"homepage": "https://github.com/SudoDotDog/Sudoo-JWT-Verify#readme",
+	"peerDependencies": {
+		"@sudoo/pattern": "*",
+		"@sudoo/verify": "*"
+	},
 	"devDependencies": {
 		"@sudoo/io": "^1.8.0",
-		"@sudoo/triforce": "^2.9.26"
+		"@sudoo/pattern": "^1.6.1",
+		"@sudoo/triforce": "^2.9.26",
+		"@sudoo/verify": "^1.16.0"
 	},
 	"nyc": {
 		"extension": [
