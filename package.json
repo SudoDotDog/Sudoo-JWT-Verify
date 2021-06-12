@@ -1,0 +1,35 @@
+{
+	"name": "@sudoo/jwt-verify",
+	"version": "1.0.0",
+	"description": "JWT Verify",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SudoDotDog/Sudoo-JWT-Verify.git"
+	},
+	"author": "WMXPY",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/SudoDotDog/Sudoo-JWT-Verify/issues"
+	},
+	"homepage": "https://github.com/SudoDotDog/Sudoo-JWT-Verify#readme",
+	"devDependencies": {
+		"@sudoo/io": "^1.8.0",
+		"@sudoo/triforce": "^2.9.26"
+	},
+	"nyc": {
+		"extension": [
+			".ts"
+		],
+		"include": [
+			"script/**/*.ts",
+			"src/**/*.ts"
+		],
+		"instrument": true,
+		"reporter": [
+			"json",
+			"text-summary"
+		],
+		"report-dir": "coverage",
+		"sourceMap": true
+	}
+}
