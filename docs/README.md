@@ -16,3 +16,33 @@ yarn add @sudoo/jwt-config @sudoo/pattern @sudoo/verify # Peer Dependencies
 npm install @sudoo/jwt-verify --save
 npm install @sudoo/jwt-config @sudoo/pattern @sudoo/verify --save # Peer Dependencies
 ```
+
+## Usage
+
+```ts
+import { createStrictMapPattern, createStringPattern } from "@sudoo/pattern";
+import { createJWTHeaderPattern, JWTVerifier } from "@sudoo/jwt-verify";
+
+const verifier: JWTVerifier = JWTVerifier.onlyHeader(createJWTHeaderPattern({
+    email: createStringPattern(),
+}));
+const verifier: JWTVerifier = JWTVerifier.onlyBody(createStrictMapPattern({
+    username: createStringPattern(),
+    createdBy: createStringPattern(),
+}));
+const verifier: JWTVerifier = JWTVerifier.headerAndBody(createJWTHeaderPattern({
+    email: createStringPattern(),
+}), createStrictMapPattern({
+    username: createStringPattern(),
+    createdBy: createStringPattern(),
+}));
+
+verifier.validateHeader(header); // false
+verifier.verifyHeader(header); // {succeed: false, invalid: [...]}
+
+verifier.validateBody(body); // false
+verifier.verifyBody(body); // {succeed: false, invalid: [...]}
+
+verifier.validateJWT(header, body); // false
+verifier.verifyJWT(header, body); // {succeed: false, headerResult: {succeed: true}, bodyResult: {succeed: false, invalid: [...]}}
+```
