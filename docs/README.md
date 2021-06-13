@@ -11,8 +11,8 @@ JWT Verify
 
 ```sh
 yarn add @sudoo/jwt-verify
-yarn add @sudoo/verify @sudoo/pattern # Peer Dependencies
+yarn add @sudoo/jwt-config @sudoo/pattern @sudoo/verify # Peer Dependencies
 # Or
 npm install @sudoo/jwt-verify --save
-npm install @sudoo/verify @sudoo/pattern --save # Peer Dependencies
+npm install @sudoo/jwt-config @sudoo/pattern @sudoo/verify --save # Peer Dependencies
 ```
