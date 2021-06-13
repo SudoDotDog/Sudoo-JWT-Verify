@@ -6,7 +6,7 @@
 
 import { createIntegerPattern, createStrictMapPattern, createStringPattern, MapPattern, Pattern } from "@sudoo/pattern";
 
-export const createJWTHeaderPattern = (headerPattern: Record<string, Pattern>, options?: Pick<MapPattern, "optional" | "generate">): Pattern => {
+export const createJWTHeaderPattern = (headerPattern: Record<string, Pattern> = {}, options?: Pick<MapPattern, "optional" | "generate">): Pattern => {
 
     return createStrictMapPattern({
 
